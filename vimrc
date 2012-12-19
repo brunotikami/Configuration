@@ -10,7 +10,6 @@ set autoindent
 set paste
 set backspace=indent,eol,start
 set textwidth=0
-set ruler
 set wildmenu
 set commentstring=\ #\ %s
 set foldlevel=0
