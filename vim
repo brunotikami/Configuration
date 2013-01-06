@@ -1,1 +1,0 @@
-/home/conan/.vim
