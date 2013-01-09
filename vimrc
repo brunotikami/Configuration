@@ -1,7 +1,7 @@
 syntax on
 filetype plugin on
 filetype plugin indent on
-colorscheme desert
+colorscheme kolor 
 set cindent
 set expandtab
 set tabstop=4
@@ -16,7 +16,6 @@ set commentstring=\ #\ %s
 set clipboard+=unnamed
 set encoding=utf-8
 set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
 let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
 
 
