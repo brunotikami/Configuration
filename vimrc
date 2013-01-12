@@ -5,6 +5,7 @@ filetype plugin indent on
 colorscheme desert
 autocmd FileType python setlocal et sta sw=4 sts=4
 
+execute pathogen#infect()
 set showcmd
 set mouse=a
 set cindent
