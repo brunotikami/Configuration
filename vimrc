@@ -1,26 +1,30 @@
 syntax on
 filetype plugin on
 filetype plugin indent on
-colorscheme kolor 
+
+colorscheme desert
+autocmd FileType python setlocal et sta sw=4 sts=4
+
+set showcmd
+set mouse=a
 set cindent
+set ruler
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set number
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 set autoindent
 set paste
 set backspace=indent,eol,start
 set textwidth=0
 set wildmenu
 set commentstring=\ #\ %s
-set clipboard+=unnamed
 set encoding=utf-8
 set grepprg=grep\ -nH\ $*
 let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
 
 
-set completeopt+=longest
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
