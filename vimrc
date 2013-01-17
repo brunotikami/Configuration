@@ -6,16 +6,19 @@ colorscheme desert
 autocmd FileType python setlocal et sta sw=4 sts=4
 
 execute pathogen#infect()
+set nocompatible
 set showcmd
 set mouse=a
-set cindent
 set ruler
+set cindent
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set number
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+map <C-x> :NERDTreeToggle<CR>
 set autoindent
+set smartindent
 set paste
 set backspace=indent,eol,start
 set textwidth=0
@@ -24,7 +27,9 @@ set commentstring=\ #\ %s
 set encoding=utf-8
 set grepprg=grep\ -nH\ $*
 let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
+autocmd FileType python set complete+=k~/.vim/syntax/python3.0.vim isk+=.,(
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
