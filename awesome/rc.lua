@@ -95,13 +95,23 @@ myawesomemenu = {
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
+require('appmenu')
 
+myapp = {
+    { "&Nautilus", "nautilus", '/usr/share/icons/gnome/32x32/apps/system-file-manager.png'},
+    { "&Wireshark", "wireshark", '/usr/share/icons/hicolor/32x32/apps/wireshark.png'},
+    { "&Dict","goldendict", '/usr/share/pixmaps/goldendict.png'},
+    { "Deluge", "deluge-gtk", '/usr/share/pixmaps/deluge.png'},
+    { "&Fetion", "openfetion", '/usr/share/pixmapx/fetion.svg'},
+    { "Pidgin", "pidgin"}
+}
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "终端", terminal, '/usr/share/icons/gnome/32x32/apps/gnome-terminal.png' },
-                                    { "GVIM", "gvim" },
+                                    { "&GVIM", "gvim", '/usr/share/pixmaps/gvim.png' },
                                     { "谷歌", "google-chrome", '/usr/share/icons/hicolor/48x48/apps/google-chrome.png' },
-                                    { "火狐", "firefox", '/usr/share/icons/hicolor/32x32/apps/firefox.png'},
-                                    { "应用程序", appmemu },
+                                    { "火狐(&F)", "firefox", '/usr/share/icons/hicolor/32x32/apps/firefox.png'},
+                                    { "常用", myapp },
+                                    { "应用程序(&A)", xdgmenu},
                                     { "关机", "systemctl poweroff"}
                                   }
                         })
