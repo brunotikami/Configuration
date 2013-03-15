@@ -55,11 +55,11 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
+    awful.layout.suit.floating,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
@@ -106,7 +106,7 @@ myapp = {
     { "Pidgin", "pidgin"}
 }
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "终端", terminal, '/usr/share/icons/gnome/32x32/apps/gnome-terminal.png' },
+                                    { "终端(&T)", terminal, '/usr/share/icons/gnome/32x32/apps/gnome-terminal.png' },
                                     { "&GVIM", "gvim", '/usr/share/pixmaps/gvim.png' },
                                     { "谷歌", "google-chrome", '/usr/share/icons/hicolor/48x48/apps/google-chrome.png' },
                                     { "火狐(&F)", "firefox", '/usr/share/icons/hicolor/32x32/apps/firefox.png'},
