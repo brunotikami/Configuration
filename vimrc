@@ -8,16 +8,20 @@ autocmd FileType python setlocal et sta sw=4 sts=4
 
 autocmd FileType python set complete+=k~/.vim/bundle/vim-python-syntax/syntax/python3.vim isk+=.,(
 
+let g:solarized_termcolors=256
 set number
+
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+call togglebg#map("<F5>")
 set title
-colorscheme desert
+set background=dark
+colorscheme solarized
 set laststatus=2
 set nobackup
 set t_Co=256
 let Powerline_symbols='compatible'
 set ruler
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols ='fancy'
 set hlsearch
 set incsearch
 set showmode

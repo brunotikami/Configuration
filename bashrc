@@ -25,5 +25,5 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export PATH=${PATH}:/root/.gem/ruby/2.0.0/bin
 export PATH=${PATH}:/home/conan/.gem/ruby/2.0.0/bin
 export WORKON_HOME=~/Virtualenvs
-source /usr/bin/virtualenvwrapper.sh
-source ~/.git-completion.bash
+#source /usr/bin/virtualenvwrapper.sh
+source ~/Code/mapleray/Configuration/git-completion.bash
