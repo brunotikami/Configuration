@@ -1,0 +1,49 @@
+# ==============================================================================
+# FIREFOX SPECIFIC SETTINGS
+# ==============================================================================
+
+style "ff-default"
+{
+    GtkCheckButton::indicator-size = 14
+}
+
+widget "MozillaGtkWidget*GtkButton*" style "ff-default"
+
+
+style	"ff-statusbar"
+{
+	xthickness	= 4
+	ythickness	= 3
+}
+
+style "ff-tool" = "menubar"
+{
+    fg[NORMAL]          = @dark_fg_color
+    fg[PRELIGHT]        = @selected_fg_color
+    fg[ACTIVE]          = @dark_fg_color
+    fg[SELECTED]        = @selected_fg_color
+    fg[INSENSITIVE]     = mix (0.5, @dark_fg_color, @dark_bg_color)
+
+	  bg[NORMAL]          = @dark_bg_color
+    bg[PRELIGHT]        = shade (1.25, @dark_bg_color)
+    bg[ACTIVE]          = shade (0.70, @dark_bg_color)
+    bg[SELECTED]        = @selected_bg_color
+    bg[INSENSITIVE]     = shade (0.98, @dark_bg_color)
+
+    text[NORMAL]        = @dark_fg_color
+    text[PRELIGHT]      = @selected_fg_color
+    text[ACTIVE]        = @dark_fg_color
+    text[SELECTED]      = @selected_fg_color
+    text[INSENSITIVE]   = mix (0.5, @dark_fg_color, @dark_bg_color)
+
+    base[NORMAL]        = shade (0.70, @dark_bg_color)
+    base[PRELIGHT]      = shade (0.80, @dark_bg_color)
+    base[ACTIVE]        = shade (0.70, @dark_bg_color)
+    base[SELECTED]      = @selected_bg_color
+    base[INSENSITIVE]   = shade (0.98, @dark_bg_color)
+
+	GtkToolbar:: shadow-type = GTK_SHADOW_NONE
+}
+
+widget	"MozillaGtkWidget*Toolbar*"		style	"ff-tool"
+widget	"MozillaGtkWidget*Statusbar*"	style	"ff-statusbar"

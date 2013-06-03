@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=GrayRevenge
+Comment=A modern light theme for Gnome
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=GrayRevenge
+MetacityTheme=GrayRevenge
+IconTheme=AwOken
+CursorTheme=DMZ-White
+ButtonLayout=:minimize,maximize,close

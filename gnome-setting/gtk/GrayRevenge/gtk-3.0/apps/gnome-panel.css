@@ -1,0 +1,113 @@
+/* Fallback Mode Panel */
+PanelWidget :backdrop,
+PanelApplet :backdrop,
+PanelToplevel :backdrop,
+PanelWidget,
+PanelApplet,
+PanelToplevel {
+    padding: 0;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_menu_color, 1.6)),
+                                     to (@dark_menu_color));
+
+    color: @dark_menu_fg;
+	text-shadow: 0 -1 shade (@dark_menu_color, 0.6);
+}
+
+PanelApplet {
+    border-width: 0;
+    color: @dark_menu_fg;
+}
+
+PanelSeparator {
+    border-width: 0;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_menu_color, 1.6)),
+                                     to (@dark_menu_color));
+
+    color: @dark_menu_fg;
+}
+
+.gnome-panel-menu-bar,
+PanelApplet > GtkMenuBar.menubar,
+PanelApplet > GtkMenuBar.menubar.menuitem,
+PanelMenuBar.menubar,
+PanelMenuBar.menubar.menuitem {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_menu_color, 1.6)),
+                                     to (@dark_menu_color));
+    color: @dark_menu_fg;
+}
+
+PanelAppletFrame { 
+    background-color: @dark_menu_color;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_menu_color, 1.6)),
+                                     to (@dark_menu_color));
+    color: @dark_menu_fg;
+    border-width: 0;
+}
+
+PanelApplet .button:backdrop,
+PanelApplet .button,
+PanelApplet .button*:backdrop,
+PanelApplet .button* {
+    -GtkButton-inner-border: 2;
+
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (transparent),
+                                     to (transparent));    
+    color: @dark_menu_fg;
+    border-color: transparent;
+    border-radius: 0;
+    border-width: 0 1px 0 1px;
+	text-shadow: 0 -1 shade (@dark_menu_color, 0.6);
+
+    -unico-border-gradient: none;
+    -unico-glow-radius: 0;
+    -unico-inner-stroke-width: 0px;
+    -unico-outer-stroke-width: 0px;
+}
+
+PanelApplet .button:prelight:backdrop,
+PanelApplet .button:prelight,
+PanelApplet .button:hover:backdrop,
+PanelApplet .button:hover {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_menu_color, 1.2)),
+                                     to (shade (@dark_menu_color, 1.0))); 
+    border-color: transparent;
+    border-radius: 0;
+    border-width: 0 1px 0 1px;
+	text-shadow: 0 -1 shade (@dark_menu_color, 0.6);
+
+    -unico-border-gradient: none;
+    -unico-glow-radius: 0;
+    -unico-inner-stroke-width: 0;
+    -unico-outer-stroke-width: 0;
+}
+
+PanelApplet .button:active:prelight:backdrop,
+PanelApplet .button:active:backdrop,
+PanelApplet .button:active:prelight,
+PanelApplet .button:active {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_menu_color, 0.7)),
+                                     to (shade (@dark_menu_color, 0.8))); 
+    border-color: transparent;
+    border-radius: 0;
+    border-width: 0 1px 0 1px;
+	text-shadow: 0 -1 shade (@dark_menu_color, 0.6);
+
+    -unico-border-gradient: none;
+    -unico-glow-radius: 0;
+    -unico-inner-stroke-width: 0;
+    -unico-outer-stroke-width: 0;
+}
+
+ClockBox {
+}
+
+WnckPager, WnckTasklist {
+    background-color: @dark_menu_color;
+}
