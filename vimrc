@@ -1,20 +1,18 @@
 set nocompatible
 filetype off
 execute pathogen#infect()
-syntax on
+syntax enable
 filetype plugin indent on
 filetype on
 autocmd FileType python setlocal et sta sw=4 sts=4
 
 autocmd FileType python set complete+=k~/.vim/bundle/vim-python-syntax/syntax/python3.vim isk+=.,(
-
-let g:solarized_termcolors=256
 set number
-
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 call togglebg#map("<F5>")
 set title
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 set laststatus=2
 set nobackup
