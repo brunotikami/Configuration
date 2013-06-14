@@ -41,8 +41,8 @@ end
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "gnome-terminal"
-editor = os.getenv("EDITOR") or "gvim"
+terminal = "xfce4-terminal"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -66,7 +66,7 @@ local layouts =
     awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    --awful.layout.suit.magnifier
 }
 -- }}}
 
