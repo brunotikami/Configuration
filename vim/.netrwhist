@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/conan/Code/mapleray/myvim/vim/bundle/bash-support.vim'
 let g:netrw_dirhist_2='/etc/X11/xorg.conf.d'
 let g:netrw_dirhist_3='/home/conan/Code/mapleray/Configuration/awesome'
 let g:netrw_dirhist_4='/home/conan/Code/mapleray/Myblog/en/_layouts'
 let g:netrw_dirhist_5='/home/conan/Code/mapleray/Configuration/vim'
 let g:netrw_dirhist_6='/home/conan/Code/mapleray/Myblog/mapleray.github.com/wiki'
+let g:netrw_dirhist_7='/etc/X11/xinit'
+let g:netrw_dirhist_8='/home/conan/Code/mapleray/Configuration/awesome'

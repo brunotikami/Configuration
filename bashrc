@@ -8,7 +8,7 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 export EDITOR="vim"
-export LANG="zh_CN.UTF-8"
+export LANG=zh_CN.UTF-8
 complete -cf sudo
 export HISTSIZE="100"
 alias grep='grep --color=auto'

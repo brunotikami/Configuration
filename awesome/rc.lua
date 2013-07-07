@@ -38,12 +38,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xfce4-terminal"
-editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -e " .. editor
+editor = "gvim"
+editor_cmd = editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -81,9 +81,10 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
+tags_name = { "1", "2浏览器", "3", "4", "5文件", "6聊天", "7GVIM", "8", "9火狐" }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag(tags_name, s, layouts[1])
 end
 -- }}}
 
@@ -102,17 +103,18 @@ myapp = {
     { "&Wireshark", "wireshark", '/usr/share/icons/hicolor/32x32/apps/wireshark.png'},
     { "&Dict","goldendict", '/usr/share/pixmaps/goldendict.png'},
     { "Deluge", "deluge-gtk", '/usr/share/pixmaps/deluge.png'},
-    { "&Fetion", "openfetion", '/usr/share/pixmapx/fetion.svg'},
+    { "&Fetion", "openfetion", '/usr/share/pixmaps/fetion.svg'},
     { "Pidgin", "pidgin"}
 }
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "终端(&T)", terminal, '/usr/share/icons/gnome/32x32/apps/gnome-terminal.png' },
+                                    { "&Emacs", "/usr/bin/emacs", '/usr/share/icons/hicolor/48x48/apps/emacs.png'},
                                     { "&GVIM", "gvim", '/usr/share/pixmaps/gvim.png' },
                                     { "谷歌", "google-chrome", '/usr/share/icons/hicolor/48x48/apps/google-chrome.png' },
                                     { "火狐(&F)", "firefox", '/usr/share/icons/hicolor/32x32/apps/firefox.png'},
                                     { "常用", myapp },
                                     { "应用程序(&A)", xdgmenu},
-                                    { "关机", "systemctl poweroff"}
+                                    { "关机", "systemctl poweroff",'/usr/share/icons/gnome/16x16/actions/gtk-quit.png'}
                                   }
                         })
 
@@ -125,7 +127,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock()
+mytextclock = awful.widget.textclock(" %Y年%m月%d日 %H:%M:%S %A ", 1)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -273,6 +275,7 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
+awful.key({ modkey,           }, "g", function () awful.util.spawn("gvim") end),
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
@@ -369,6 +372,8 @@ awful.rules.rules = {
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
+      properties = { floating = true } },
+    { rule = { class = "Firefox", name = "Download"},
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
