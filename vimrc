@@ -13,7 +13,13 @@ call togglebg#map("<F5>")
 set title
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+
+if has("gui_running")
+    colorscheme solarized
+else
+    colorscheme desert
+endif
+
 set laststatus=2
 set nobackup
 set t_Co=256
